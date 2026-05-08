@@ -1,21 +1,24 @@
 # Wazuh SIEM Security Lab
 
-A hands-on cybersecurity lab demonstrating Wazuh SIEM deployment, endpoint monitoring, vulnerability visibility, Suricata IDS alerts, VirusTotal enrichment, file integrity monitoring, and AWS cloud networking.
+A hands-on cybersecurity lab showing how I deployed and tested a Wazuh SIEM environment for endpoint monitoring, vulnerability visibility, Suricata IDS alerting, VirusTotal enrichment, File Integrity Monitoring, and AWS cloud networking.
 
 ## Project Overview
 
-This project documents a Wazuh-based SIEM lab built to practice security monitoring and incident visibility in a cloud environment. The lab involved deploying Wazuh, configuring a monitored endpoint, reviewing alerts, integrating network detection with Suricata, using VirusTotal enrichment, and observing file integrity events.
+This project documents a practical Wazuh SIEM lab built in a cloud environment. The lab was used to practice security monitoring, endpoint visibility, network intrusion detection, vulnerability review, log analysis, threat intelligence enrichment, and alert investigation.
+
+The setup includes AWS cloud infrastructure, a Wazuh deployment, an Ubuntu endpoint agent, Suricata IDS, VirusTotal integration, and controlled File Integrity Monitoring tests.
 
 ## Objectives
 
-- Deploy a Wazuh SIEM lab environment
-- Configure cloud networking using AWS VPC resources
-- Prepare compute resources for the Wazuh server and monitored endpoint
-- Monitor endpoint activity through a connected Wazuh agent
-- Review vulnerability detection results
-- Analyze Suricata IDS alerts in Wazuh Threat Hunting
-- Observe VirusTotal and file integrity monitoring alerts
-- Practice log analysis, alert investigation, and security event visibility
+- Build a cloud-based cybersecurity monitoring lab
+- Deploy Wazuh SIEM and access the Wazuh dashboard
+- Configure a monitored Linux endpoint using the Wazuh agent
+- Use Wazuh for endpoint visibility, log review, and alert investigation
+- Review vulnerability detection results from the monitored endpoint
+- Integrate Suricata IDS alerts into Wazuh Threat Hunting
+- Test File Integrity Monitoring using controlled file changes
+- Use VirusTotal enrichment to inspect suspicious file activity
+- Document the lab as a professional cybersecurity portfolio project
 
 ## Technologies Used
 
@@ -25,110 +28,215 @@ This project documents a Wazuh-based SIEM lab built to practice security monitor
 - AWS EC2
 - AWS VPC
 - AWS Security Groups
-- Docker / Docker Compose
+- Docker and Docker Compose
 - Linux / Ubuntu
 - SSH
-- Log analysis
 - File Integrity Monitoring
 - Vulnerability Detection
+- Log Analysis
+- Threat Hunting
+
+## Lab Architecture
+
+The lab was hosted on AWS. The AWS environment provided networking and compute resources for the Wazuh server and monitored endpoint. Wazuh collected endpoint data from the Ubuntu agent and displayed alerts, vulnerabilities, and file integrity events through the dashboard.
+
+Suricata was configured to generate network security alerts, which were reviewed from Wazuh Threat Hunting. VirusTotal enrichment was configured to provide additional context for suspicious file activity.
+
+```text
+AWS VPC
+├── EC2 Instance: Wazuh Server
+│   ├── Wazuh Manager
+│   ├── Wazuh Dashboard
+│   └── Wazuh Indexer
+│
+├── EC2 Instance: Ubuntu Monitored Endpoint
+│   └── Wazuh Agent
+│
+├── Suricata IDS
+│   └── Network alert generation
+│
+└── VirusTotal Integration
+    └── File reputation enrichment
+```
 
 ## Lab Evidence
 
-### 1. AWS VPC Workflow
+### 1. AWS VPC Resources Created
 
-Created the AWS VPC resources used for the lab networking environment, including subnets, route tables, internet gateway, NAT gateway, DNS hostnames, and DNS resolution.
+Successful AWS VPC resource creation for the lab networking foundation.
 
-![AWS VPC Workflow](screenshots/aws-vpc-workflow.png)
+![AWS VPC Resources Created](./screenshots/01-aws-vpc-resources-created.png)
 
-### 2. EC2 Instances Overview
+**What it demonstrates:**
 
-Prepared EC2 instances for the lab environment, including instances used for the Wazuh server and supporting endpoint/testing hosts.
+- AWS VPC planning
+- Cloud networking
+- Subnet and routing preparation
+- Security lab infrastructure foundation
 
-![EC2 Instances Overview](screenshots/ec2-instances-overview.png)
+### 2. AWS EC2 Lab Instances
 
-### 3. Wazuh Deployment Dashboard
+EC2 instances used for the Wazuh server and supporting monitored/test hosts.
 
-Deployed Wazuh using Docker Compose and accessed the Wazuh dashboard to confirm the platform was running.
+![AWS EC2 Lab Instances](./screenshots/02-aws-ec2-lab-instances.png)
 
-![Wazuh Deployment Dashboard](screenshots/wazuh-deployment-dashboard.png)
+**What it demonstrates:**
+
+- Cloud compute setup
+- Instance management
+- Lab environment organization
+- Security monitoring infrastructure
+
+### 3. Wazuh Docker Deployment
+
+Wazuh single-node deployment using Docker with dashboard access confirmed.
+
+![Wazuh Docker Deployment](./screenshots/03-wazuh-docker-deployment.png)
+
+**What it demonstrates:**
+
+- Docker-based Wazuh deployment
+- Linux server administration
+- Security platform setup
+- Dashboard availability verification
 
 ### 4. Wazuh Agent Connected
 
-Connected a monitored Ubuntu endpoint to Wazuh and confirmed the agent was active.
+Ubuntu monitored endpoint connected successfully to Wazuh.
 
-![Wazuh Agent Connected](screenshots/wazuh-agent-connected.png)
+![Wazuh Agent Connected](./screenshots/04-wazuh-agent-connected.png)
+
+**What it demonstrates:**
+
+- Endpoint onboarding
+- Wazuh agent enrollment
+- Agent health verification
+- Endpoint visibility
 
 ### 5. Vulnerability Detection Dashboard
 
-Reviewed vulnerability detection results from the monitored endpoint, including severity counts, affected packages, and operating system visibility.
+Wazuh vulnerability detection results showing severity distribution and affected packages.
 
-![Wazuh Vulnerability Dashboard](screenshots/wazuh-vulnerability-dashboard.png)
+![Vulnerability Detection Dashboard](./screenshots/05-vulnerability-detection-dashboard.png)
 
-### 6. Suricata Threat Hunting Alerts
+**What it demonstrates:**
 
-Integrated Suricata IDS alerts into Wazuh and reviewed network security events in Threat Hunting.
+- Vulnerability visibility
+- Risk review
+- Package assessment
+- Security dashboard analysis
 
-![Suricata Threat Hunting Alerts](screenshots/suricata-threat-hunting-alerts.png)
+### 6. Suricata IDS Service Running
 
-### 7. VirusTotal and File Integrity Alerts
+Suricata IDS enabled and running on the monitoring host.
 
-Generated file activity in a monitored directory and reviewed Wazuh alerts showing VirusTotal detection and file integrity monitoring events.
+![Suricata IDS Service Running](./screenshots/06-suricata-service-running.png)
 
-![VirusTotal and File Integrity Alerts](screenshots/virustotal-file-integrity-alerts.png)
+**What it demonstrates:**
 
-### 8. Suricata Service Running
+- Suricata setup
+- Linux service management
+- IDS rule loading
+- Network security monitoring preparation
 
-Confirmed Suricata service status and rule loading on the monitoring host.
+### 7. Suricata Alerts in Wazuh Threat Hunting
 
-![Suricata Service Running](screenshots/suricata-service-running.png)
+Suricata-generated alerts visible in Wazuh Threat Hunting.
+
+![Suricata Alerts in Wazuh Threat Hunting](./screenshots/07-suricata-alerts-in-wazuh.png)
+
+**What it demonstrates:**
+
+- Suricata and Wazuh integration
+- Threat hunting workflow
+- Network alert review
+- Rule severity interpretation
+
+### 8. VirusTotal and File Integrity Alerts
+
+VirusTotal enrichment and FIM events generated from controlled file activity.
+
+![VirusTotal and File Integrity Alerts](./screenshots/08-virustotal-file-integrity-alerts.png)
+
+**What it demonstrates:**
+
+- VirusTotal enrichment
+- File integrity monitoring
+- Suspicious file alerting
+- Alert investigation
+
+### 9. File Integrity Monitoring Events
+
+FIM events showing added and modified monitored files.
+
+![File Integrity Monitoring Events](./screenshots/09-file-integrity-events.png)
+
+**What it demonstrates:**
+
+- File Integrity Monitoring
+- Change detection
+- Syscheck event review
+- Monitored path verification
+
+### 10. VirusTotal Integration Configuration
+
+VirusTotal integration configuration with sensitive API key redacted.
+
+![VirusTotal Integration Configuration](./screenshots/10-virustotal-integration-config-redacted.png)
+
+**What it demonstrates:**
+
+- Threat intelligence integration
+- Wazuh integration configuration
+- Sensitive data redaction
+- Secure project documentation
 
 ## Detection Scenarios Demonstrated
 
-### Brute-Force and Authentication Monitoring
+### Endpoint Agent Monitoring
 
-Observed authentication-related security visibility through Wazuh logs and alert monitoring.
+A Linux endpoint was connected to Wazuh using the Wazuh agent. The endpoint became visible in the dashboard with active status, operating system details, agent group, and agent version.
 
-### Suspicious Activity and Threat Hunting
+### Vulnerability Detection
 
-Used Wazuh Threat Hunting to review security events, suspicious activity, rule descriptions, and alert severity.
+Wazuh was used to review vulnerability findings on the monitored endpoint. The dashboard displayed severity levels, vulnerable packages, and affected operating system information.
 
-### Vulnerability Visibility
+### Suricata IDS Alerting
 
-Used Wazuh vulnerability detection to identify affected packages, severity levels, operating system exposure, and pending evaluations.
+Suricata IDS was configured and used to generate network security alerts. These alerts were reviewed inside Wazuh Threat Hunting to analyze rule descriptions, severity levels, and event timestamps.
 
 ### File Integrity Monitoring
 
-Monitored file activity in selected directories and reviewed alerts for added, modified, and changed files.
-
-### Suricata IDS Monitoring
-
-Integrated Suricata alerts into Wazuh to provide network-based intrusion detection visibility.
+Controlled file activity was performed in a monitored directory. Wazuh detected file additions and modifications, showing how FIM can be used to monitor important paths.
 
 ### VirusTotal Enrichment
 
-Used VirusTotal integration to enrich file-related security alerts and identify potentially malicious test files.
+VirusTotal integration was configured to enrich file-related alerts and support investigation of suspicious file activity.
 
 ## Key Skills Demonstrated
 
-- Wazuh SIEM deployment and dashboard usage
-- Endpoint agent enrollment and monitoring
+- Wazuh SIEM deployment
+- Docker-based security tool setup
 - Linux system administration
-- AWS VPC and EC2 lab setup
-- Docker-based security tool deployment
-- Security alert review and investigation
-- Vulnerability detection and risk visibility
+- AWS VPC and EC2 setup
+- Endpoint monitoring
+- Wazuh agent enrollment
+- Vulnerability detection
+- Log analysis
+- Threat hunting
 - Suricata IDS integration
 - VirusTotal enrichment
-- File integrity monitoring
-- Log analysis and threat hunting
-- Secure lab documentation
+- File Integrity Monitoring
+- Alert investigation
+- Cloud security lab documentation
 
 ## Security Note
 
-Screenshots were selected and cropped to avoid exposing unnecessary browser, account, and sensitive cloud details. Before publishing any additional screenshots, review and remove public IPs, account IDs, passwords, keys, tokens, and sensitive firewall/security group rules.
+Screenshots used in this project were selected to show the technical workflow while avoiding unnecessary sensitive exposure. Sensitive values such as API keys should never be committed to GitHub. The VirusTotal configuration screenshot has been redacted.
 
 ## Author
 
-**Lubega Isaac Patrick**  
-GitHub: https://github.com/lippatrick  
-LinkedIn: https://www.linkedin.com/in/isaac-lubega-cybersecurity-analyst/
+**Lubega Isaac Patrick**
+
+- GitHub: [lippatrick](https://github.com/lippatrick)
+- LinkedIn: [Isaac Lubega Cybersecurity Analyst](https://www.linkedin.com/in/isaac-lubega-cybersecurity-analyst/)
