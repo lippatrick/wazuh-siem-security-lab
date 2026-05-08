@@ -1,23 +1,24 @@
 # Lab Summary
 
-## Wazuh SIEM Security Lab
+This Wazuh SIEM Security Lab documents practical cybersecurity monitoring work using Wazuh, Suricata, VirusTotal, AWS, Docker, and Linux.
 
-This lab was created to practice cybersecurity monitoring, endpoint visibility, log analysis, cloud networking, and security event investigation.
+## Selected Evidence
 
-## Included Screenshot
+The selected screenshots show:
 
-- `screenshots/aws-vpc-setup.png` - AWS VPC and subnet planning screenshot showing the cloud network setup used for the lab.
+1. AWS VPC creation workflow
+2. EC2 instance preparation
+3. Wazuh deployment and dashboard access
+4. Connected Wazuh agent
+5. Vulnerability detection dashboard
+6. Suricata alerts inside Wazuh Threat Hunting
+7. VirusTotal and File Integrity Monitoring alerts
+8. Suricata service running
 
-## Recommended Additional Screenshots
+## Why These Screenshots Were Selected
 
-Add these screenshots when available:
+These images were selected because they prove the main stages of the project: cloud lab setup, SIEM deployment, endpoint enrollment, vulnerability detection, IDS integration, and alert investigation.
 
-1. `wazuh-dashboard.png`
-2. `wazuh-agent-connected.png`
-3. `security-alerts.png`
-4. `suricata-alerts.png`
-5. `virustotal-integration.png`
-6. `ec2-instances.png`
-7. `security-groups.png`
+## Images Not Included
 
-Before uploading screenshots publicly, crop or blur account IDs, public IP addresses, private keys, passwords, tokens, emails, and any sensitive account details.
+Screenshots related to unrelated Laravel projects, Jenkins, SonarQube, cPanel, job adverts, and general coding work were not included because they do not support the Wazuh SIEM Security Lab story.

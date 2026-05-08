@@ -1,17 +1,5 @@
 # Screenshots
 
-Included:
+This folder contains selected screenshots for the Wazuh SIEM Security Lab.
 
-- `aws-vpc-setup.png`
-
-Recommended to add later:
-
-- `ec2-instances.png`
-- `security-groups.png`
-- `wazuh-dashboard.png`
-- `wazuh-agent-connected.png`
-- `security-alerts.png`
-- `suricata-alerts.png`
-- `virustotal-integration.png`
-
-Crop or blur sensitive details before committing screenshots to GitHub.
+The screenshots were selected from the uploaded batch and renamed to clearly show the lab workflow.
